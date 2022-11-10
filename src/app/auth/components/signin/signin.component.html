@@ -1,1 +1,28 @@
-<p>signin works!</p>
+<mat-card>
+  <mat-card-title>
+    Sign In
+  </mat-card-title>
+  <mat-card-content>
+    <form #f="ngForm">
+      <mat-form-field >
+        <input matInput placeholder="Email"
+        name="email"
+        #emailCtrl="ngModel"
+        ngModel>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password"
+        name="password"
+        ngModel
+        #passwordCtrl="ngModel"
+        type="password">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Sign In</button>
+      <pre>
+       form: {{ f.value | json }}
+        email: {{ emailCtrl.value | json }}
+        password: {{ passwordCtrl.value | json }}
+      </pre>
+    </form>
+  </mat-card-content>
+</mat-card>
