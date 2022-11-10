@@ -12,13 +12,17 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AuthPage } from './auth.page';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { PasswordStrengthDirective } from './helpers/password.directive';
+import { OnlyoneerrorPipe } from './helpers/onlyoneerror.pipe';
 
 
 @NgModule({
   declarations: [
     AuthPage,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    PasswordStrengthDirective,
+    OnlyoneerrorPipe
   ],
   imports: [
     CommonModule,
@@ -28,7 +32,7 @@ import { SignupComponent } from './components/signup/signup.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule
-  
+
   ],
   exports: [
     AuthPage,

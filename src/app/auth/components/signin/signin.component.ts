@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { PasswordStrengthDirective } from '../../helpers/password.directive';
 
 @Component({
   selector: 'hs-signin',

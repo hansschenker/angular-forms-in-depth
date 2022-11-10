@@ -7,22 +7,32 @@
       <mat-form-field >
         <input matInput placeholder="Email"
         name="email"
+        required
         #emailCtrl="ngModel"
         ngModel>
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Password"
         name="password"
+        required
+        passwordStrength
         ngModel
         #passwordCtrl="ngModel"
         type="password">
+
+        <mat-error *ngIf="passwordCtrl.errors?.['passwordStrength']">
+          Password is required,must have lower case, upper case and numeric characters
+        </mat-error>
+
       </mat-form-field>
       <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Sign In</button>
       <pre>
        form: {{ f.value | json }}
         email: {{ emailCtrl.value | json }}
         password: {{ passwordCtrl.value | json }}
+        password errors: {{ passwordCtrl.errors | json }}
       </pre>
+
     </form>
   </mat-card-content>
 </mat-card>
